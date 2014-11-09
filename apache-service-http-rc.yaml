@@ -1,0 +1,9 @@
+id: apache-service-http-rc
+kind: Service
+apiVersion: v1beta1
+port: 9999
+containerPort: 80
+selector:
+  service: http-rc
+labels:
+  name: apache-service-http-rc

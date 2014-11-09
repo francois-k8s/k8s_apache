@@ -1,0 +1,24 @@
+id: apache-replication-controller
+kind: ReplicationController
+apiVersion: v1beta1
+desiredState: 
+  replicas: 3
+  replicaSelector: 
+    name: apache
+  podTemplate: 
+    desiredState: 
+      manifest: 
+        version: v1beta1
+        id: apache
+        containers: 
+          - name: apache-rc
+            image: francois/apache-hostname:0.1.0
+            cpu: 100
+            ports: 
+              - containerPort: 80
+                hostPort: 17000
+    labels: 
+      name: apache
+      service: http-rc
+labels: 
+  name: apache-replication-controller
