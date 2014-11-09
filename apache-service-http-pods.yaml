@@ -1,0 +1,9 @@
+id: apache-service-http-pods
+kind: Service
+apiVersion: v1beta1
+port: 8888
+containerPort: 80
+selector:
+  service: http-pods
+labels:
+  name: apache-service-http-pods
