@@ -1,7 +1,7 @@
 id: apache-service-http-pods
 kind: Service
 apiVersion: v1beta1
-port: 8888
+port: 80
 containerPort: 80
 selector:
   service: http-pods
